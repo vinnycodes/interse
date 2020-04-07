@@ -284,6 +284,90 @@ html {
     list-style: none;
     font-size: 2.9rem; }
 
+.contactHeader {
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  grid-column-gap: 4rem;
+  padding: 10rem 0; }
+
+.contactInfo {
+  grid-column: 1 / span 1;
+  font-size: 2rem; }
+  .contactInfo__title {
+    font-size: 3.2rem;
+    margin-bottom: 2rem; }
+  .contactInfo__description {
+    font-size: 2rem;
+    font-weight: 200;
+    margin-bottom: 4rem; }
+  .contactInfo__phone {
+    margin-bottom: 4rem; }
+    .contactInfo__phone img {
+      height: 1.8rem;
+      width: 1.8rem; }
+  .contactInfo__address {
+    margin-bottom: 4rem; }
+  .contactInfo__schedule {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7rem;
+    font-weight: 200;
+    color: #777;
+    margin-bottom: 4rem; }
+  .contactInfo__email {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #3993DD;
+    cursor: pointer; }
+    .contactInfo__email p {
+      display: inline;
+      transition: all .3s ease; }
+      .contactInfo__email p:hover {
+        color: gold;
+        text-decoration: underline; }
+
+.form__title {
+  margin-bottom: 2rem; }
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem; }
+
+.form__label {
+  font-size: 1.7rem;
+  font-weight: 200;
+  color: #777; }
+
+.form__input {
+  border: 1px solid #e1e1e1;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  height: 5vh;
+  text-indent: 1rem;
+  font-size: 2rem; }
+  .form__input--textarea {
+    min-height: 15vh;
+    height: 20vh;
+    max-height: 20vh;
+    max-width: 70vh;
+    min-width: 70vh;
+    resize: none; }
+
+.form__input::placeholder {
+  font-size: 2rem; }
+
+.form__button {
+  background-color: #0CEBEB;
+  align-self: start;
+  border-radius: 5px;
+  padding: 1.5rem 5rem; }
+  .form__button:hover {
+    padding: 1.5rem 5rem;
+    background-color: #F9C80E; }
+
 .approach {
   grid-column: col-start / col-end;
   padding: 10rem 0; }
