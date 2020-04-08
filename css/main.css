@@ -56,6 +56,7 @@ html {
   margin-bottom: 2rem; }
 
 .btn, .btn:link, .btn:visited {
+  outline: none;
   padding: 1.5rem 4rem;
   border: none;
   border-radius: 10rem;
@@ -532,7 +533,8 @@ html {
 .glide__bullets {
   display: block !important;
   position: relative !important;
-  padding-top: 5rem !important; }
+  padding-top: 5rem !important;
+  z-index: 0 !important; }
 
 .glide__bullet {
   background-color: #20E3B2 !important;
