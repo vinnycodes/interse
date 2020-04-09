@@ -9,6 +9,7 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: "Poppins", "Heebo", sans-serif;
+  scroll-behavior: smooth;
   font-size: 62.5%; }
 
 .container {
@@ -16,19 +17,23 @@ html {
   grid-template-rows: 10vh 80vh repeat(5, min-content);
   grid-template-columns: [full-start] 15vw [center-start] 10vw [col-start] 25vw 25vw [col-end] 10vw [center-end] 15vw [full-end]; }
 
-.companyLogo {
+.companyLogo a, .companyLogo:link, .companyLogo:visited {
   display: flex;
   justify-content: flex-end;
   font-size: 3rem;
-  font-family: "Poppins", "Heebo", sans-serif; }
-  .companyLogo__dot {
-    font-family: "Heebo", sans-serif;
-    font-size: 3.5rem;
-    height: 100%; }
-    .companyLogo__dot--1 {
-      font-size: 1.7rem; }
-  .companyLogo__color {
-    color: #0CEBEB; }
+  font-family: "Poppins", "Heebo", sans-serif;
+  text-decoration: none;
+  color: black; }
+
+.companyLogo__dot {
+  font-family: "Heebo", sans-serif;
+  font-size: 3.5rem;
+  height: 100%; }
+  .companyLogo__dot--1 {
+    font-size: 1.7rem; }
+
+.companyLogo__color {
+  color: #0CEBEB; }
 
 .heading {
   font-family: "Poppins", "Heebo", sans-serif;
@@ -294,15 +299,17 @@ html {
   grid-column: center-start / center-end;
   display: grid;
   grid-template-columns: repeat(2, minmax(min-content, 1fr));
-  grid-column-gap: 4rem;
-  padding: 10rem 0; }
+  grid-column-gap: 4rem; }
+  .contactHeader__title {
+    margin-bottom: 3rem;
+    text-decoration: underline; }
 
 .contactInfo {
   grid-column: 1 / span 1;
   font-size: 2rem; }
   .contactInfo__title {
     font-size: 3.2rem;
-    margin-bottom: 2rem; }
+    margin-bottom: 10rem; }
   .contactInfo__description {
     font-size: 2rem;
     font-weight: 200;
@@ -757,7 +764,11 @@ html {
   .footer__list {
     list-style: none;
     color: #cccccc; }
-  .footer__logo {
+  .footer__logo a, .footer__logo:link, .footer__logo:visited {
+    font-size: 3rem;
+    font-family: "Poppins", "Heebo", sans-serif;
+    text-decoration: none;
+    color: white;
     justify-content: start;
     color: white; }
   .footer__itemTitle {
