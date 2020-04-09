@@ -60,6 +60,30 @@ html {
 .mb__small {
   margin-bottom: 2rem; }
 
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1; }
+  .background__home--1 {
+    background-color: #0CEBEB; }
+  .background__home--2 {
+    background-color: #3993DD; }
+  .background__home--final {
+    background-color: white; }
+  .background__about--1 {
+    background-color: #0CEBEB; }
+  .background__about--2 {
+    background-color: #29FFC6; }
+  .background__services--1 {
+    background-color: #F9C80E; }
+  .background__services--2 {
+    background-color: #F86624; }
+  .background__services--final {
+    background-color: black; }
+
 .btn, .btn:link, .btn:visited {
   outline: none;
   padding: 1.5rem 4rem;
@@ -827,7 +851,8 @@ html {
   grid-column: center-start / full-end;
   background-color: #fff;
   display: grid;
-  grid-template-columns: 1fr 1.5fr; }
+  grid-template-columns: 1fr 1.5fr;
+  background-color: white; }
   .header__words {
     grid-column: 1 / span 1;
     display: flex;
