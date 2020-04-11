@@ -11,11 +11,20 @@ html {
   font-family: "Poppins", "Heebo", sans-serif;
   scroll-behavior: smooth;
   font-size: 62.5%; }
+  @media only screen and (max-width: 53rem) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 41.56rem) {
+    html {
+      font-size: 43.75%; } }
 
 .container {
   display: grid;
   grid-template-rows: 10vh 80vh repeat(5, min-content);
   grid-template-columns: [full-start] 15vw [center-start] 10vw [col-start] 25vw 25vw [col-end] 10vw [center-end] 15vw [full-end]; }
+  @media only screen and (max-width: 53rem) {
+    .container {
+      grid-template-columns: [full-start] 10vw [center-start] 15vw [col-start] 25vw 25vw [col-end] 15vw [center-end] 10vw [full-end]; } }
 
 .companyLogo a, .companyLogo:link, .companyLogo:visited {
   display: flex;
@@ -160,6 +169,9 @@ html {
   padding: 15rem 0;
   display: grid;
   grid-template-columns: [full-start] 15vw [center-start] 10vw [col-start] 25vw 25vw [col-end] 10vw [center-end] 15vw [full-end]; }
+  @media only screen and (max-width: 53rem) {
+    .facts {
+      grid-template-columns: [full-start] 10vw [center-start] 15vw [col-start] 25vw 25vw [col-end] 15vw [center-end] 10vw [full-end]; } }
   .facts__title {
     font-size: 4rem;
     grid-column: center-start / center-end; }
@@ -167,11 +179,38 @@ html {
     display: flex;
     justify-content: space-between;
     grid-column: center-start / center-end; }
+    @media only screen and (max-width: 53rem) {
+      .facts__list {
+        font-size: 2rem; } }
+    @media only screen and (max-width: 754px) {
+      .facts__list {
+        grid-column: full-start / full-end;
+        flex-flow: column wrap;
+        text-align: center; } }
+  @media only screen and (max-width: 53rem) {
+    .facts__items {
+      font-size: 2rem; } }
+  @media only screen and (max-width: 1500px) {
+    .facts__title, .facts__list {
+      grid-column: full-start / full-end;
+      padding: 0 10rem; } }
+  @media only screen and (max-width: 64rem) {
+    .facts__title, .facts__list {
+      padding: 0 5rem; } }
+  @media only screen and (max-width: 754px) {
+    .facts__title, .facts__list {
+      text-align: center; } }
   .facts__items {
     font-weight: 200;
     list-style: none; }
+    @media only screen and (max-width: 754px) {
+      .facts__items:not(:last-child) {
+        margin-bottom: 4rem; } }
   .facts__number {
     font-size: 10rem; }
+    @media only screen and (max-width: 1200px) {
+      .facts__number {
+        font-size: 7rem; } }
   .facts__description {
     font-size: 2rem;
     text-align: center; }
@@ -181,12 +220,21 @@ html {
   padding: 10rem 0;
   display: flex;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  align-items: center; }
+  @media only screen and (max-width: 1560px) {
+    .aboutTeam {
+      grid-column: full-start / full-end; } }
   .aboutTeam__listContainer {
     margin-bottom: 5rem; }
   .aboutTeam__list {
     display: flex;
-    list-style: none; }
+    list-style: none;
+    flex-wrap: wrap; }
+    @media only screen and (max-width: 41.56rem) {
+      .aboutTeam__list {
+        justify-content: center;
+        align-items: center; } }
   .aboutTeam__item {
     font-size: 3rem;
     color: #999;
@@ -197,6 +245,9 @@ html {
     border-radius: 2px; }
     .aboutTeam__item:not(:last-child) {
       margin-right: 7rem; }
+      @media only screen and (max-width: 41.56rem) {
+        .aboutTeam__item:not(:last-child) {
+          margin: 2rem 2rem; } }
     .aboutTeam__item:hover {
       color: black;
       border-bottom: 3px solid #3993DD; }
@@ -217,15 +268,34 @@ html {
     opacity: 0; }
   .aboutTeam__container {
     display: grid;
-    grid-template-columns: repeat(4, minmax(350px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-row-gap: 2.5rem;
-    justify-items: start; }
+    justify-items: center;
+    padding: 0 2rem; }
+    @media only screen and (max-width: 53rem) {
+      .aboutTeam__container {
+        grid-template-columns: repeat(3, 1fr); } }
+    @media only screen and (max-width: 41.56rem) {
+      .aboutTeam__container {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        padding: 0rem; } }
   .aboutTeam__card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+    @media only screen and (max-width: 53rem) {
+      .aboutTeam__card--16 {
+        justify-self: center;
+        align-self: center;
+        align-items: center;
+        justify-items: center;
+        grid-column: 1 / span 3; } }
+    @media only screen and (max-width: 41.56rem) {
+      .aboutTeam__card--16 {
+        grid-column: initial; } }
   .aboutTeam__img {
     height: 20rem;
     width: 20rem;
@@ -406,8 +476,14 @@ html {
     background-color: #F9C80E; }
 
 .approach {
-  grid-column: col-start / col-end;
+  grid-column: center-start / center-end;
   padding: 10rem 0; }
+  @media only screen and (max-width: 53rem) {
+    .approach {
+      grid-column: full-start / full-end; } }
+  @media only screen and (max-width: 41.56rem) {
+    .approach {
+      padding: 10rem 5rem; } }
   .approach__title {
     text-align: center; }
   .approach__cardContainer {
@@ -415,12 +491,20 @@ html {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 4rem; }
+    @media only screen and (max-width: 41.56rem) {
+      .approach__cardContainer {
+        grid-template-columns: none;
+        grid-template-rows: repeat(4, 1fr); } }
   .approach__card {
     border-radius: 10px;
     box-shadow: 0 1rem 5rem rgba(153, 153, 153, 0.3);
-    padding: 4rem 3rem; }
+    padding: 4rem 3rem;
+    min-width: 35rem; }
     .approach__card--2, .approach__card--4 {
       grid-column: 2 / span 1; }
+      @media only screen and (max-width: 41.56rem) {
+        .approach__card--2, .approach__card--4 {
+          grid-column: 1 / span 1; } }
     .approach__card--2 {
       background-color: #3993DD;
       color: white; }
@@ -429,6 +513,9 @@ html {
     display: flex;
     align-items: center;
     margin-bottom: 1rem; }
+    @media only screen and (max-width: 41.56rem) {
+      .approach__cardTitle {
+        justify-content: center; } }
   .approach__number {
     font-size: 4rem;
     margin-right: 2rem; }
@@ -444,6 +531,9 @@ html {
     border-top: 0.03rem solid rgba(12, 235, 235, 0.5); }
     .approach__description--1 {
       border-top: 0.03rem solid rgba(255, 255, 255, 0.4); }
+    @media only screen and (max-width: 41.56rem) {
+      .approach__description {
+        text-align: center; } }
 
 .clients {
   grid-column: full-start / full-end;
@@ -470,6 +560,15 @@ html {
   .clients__description {
     font-size: 2rem;
     width: 70%; }
+  .clients__brands {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0rem 5rem; }
   .clients__brand {
     display: flex;
     justify-content: space-evenly;
@@ -481,9 +580,8 @@ html {
     width: 8rem;
     min-width: 8rem;
     opacity: .5;
-    background-color: #fff;
-    margin-bottom: 5rem;
-    margin-right: 5rem;
+    background-color: #ffff;
+    margin: 0rem 2.5rem 5rem 2.5rem;
     transition: .2s ease; }
     .clients__brand:hover {
       opacity: .9;
@@ -511,8 +609,12 @@ html {
     box-shadow: 0rem 1rem 5rem rgba(153, 153, 153, 0.4);
     display: grid;
     grid-template-columns: repeat(2, 1fr); }
+    @media only screen and (max-width: 41.56rem) {
+      .clientReview__containter {
+        overflow: hidden; } }
   .clientReview__img {
     grid-column: 1 / span 1;
+    min-width: 275px;
     background-image: url("../imgs/workspace1.jpg");
     background-size: cover;
     background-position: right;
@@ -524,13 +626,22 @@ html {
     shape-margin: 2em;
     border-radius: 10px;
     object-fit: contain; }
+    @media only screen and (max-width: 53rem) {
+      .clientReview__img {
+        display: none; } }
   .clientReview__words {
     grid-column: 2 / span 1;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-right: 5rem; }
+    padding-right: 5rem;
+    width: 100%; }
+    @media only screen and (max-width: 41.56rem) {
+      .clientReview__words {
+        grid-column: 1 / span 2;
+        justify-content: center;
+        align-content: center; } }
   .clientReview__title {
     text-decoration: underline overline;
     text-underline-offset: 1rem;
@@ -548,6 +659,12 @@ html {
   .clientReview__testimonial {
     font-weight: 300;
     font-size: 1.8rem; }
+    @media only screen and (max-width: 41.56rem) {
+      .clientReview__testimonial {
+        padding-right: 20rem; } }
+    @media only screen and (max-width: 600px) {
+      .clientReview__testimonial {
+        padding-right: 35rem; } }
   .clientReview__name {
     font-size: 1.6rem;
     color: #777; }
@@ -621,7 +738,8 @@ html {
 
 .why {
   grid-column: full-start / full-end;
-  padding: 20rem 0rem 0rem 0rem; }
+  padding: 20rem 0rem 0rem 0rem;
+  overflow: hidden !important; }
   .why__title {
     font-size: 3.3rem;
     font-family: "Heebo", sans-serif;
@@ -635,9 +753,10 @@ html {
     justify-content: center;
     align-content: center;
     background-color: #3993DD;
-    margin-bottom: 20rem !important;
+    margin-bottom: 20rem;
     height: 37rem !important;
-    padding: 2rem !important;
+    min-width: 30rem;
+    padding: 2rem;
     border-radius: 25px;
     text-align: center;
     color: white;
@@ -645,7 +764,7 @@ html {
     .why__card--1 {
       background-color: #3993DD; }
     .why__card--2 {
-      background-color: #fff;
+      background-color: #ffff;
       color: black;
       box-shadow: 0rem 2rem 4rem rgba(153, 153, 153, 0.5); }
     .why__card--3 {
@@ -779,15 +898,32 @@ html {
   padding: 15rem 0;
   display: grid;
   grid-template-columns: [full-start] 15vw [center-start] 10vw [col-start] 25vw 25vw [col-end] 10vw [center-end] 15vw [full-end]; }
+  @media only screen and (max-width: 53rem) {
+    .footer {
+      grid-template-columns: [full-start] 10vw [center-start] 15vw [col-start] 25vw 25vw [col-end] 15vw [center-end] 10vw [full-end]; } }
   .footer__container {
     grid-column: center-start / center-end; }
+    @media only screen and (max-width: 64rem) {
+      .footer__container {
+        grid-column: full-start / full-end;
+        padding: 0rem 5rem; } }
   .footer__nav {
     display: flex;
     justify-content: space-between;
     margin-bottom: 3rem; }
+    @media only screen and (max-width: 41.56rem) {
+      .footer__nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); } }
   .footer__list {
     list-style: none;
     color: #cccccc; }
+    @media only screen and (max-width: 1130px) {
+      .footer__list:not(:last-child) {
+        margin-right: 5rem; } }
+    @media only screen and (max-width: 41.56rem) {
+      .footer__list--1:not(:last-child), .footer__list--2:not(:last-child) {
+        margin-bottom: 5rem; } }
   .footer__logo a, .footer__logo:link, .footer__logo:visited {
     font-size: 3rem;
     font-family: "Poppins", "Heebo", sans-serif;
@@ -849,7 +985,7 @@ html {
 
 .header {
   grid-column: center-start / full-end;
-  background-color: #fff;
+  background-color: #ffff;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   background-color: white; }
@@ -897,7 +1033,7 @@ html {
 
 .nav {
   grid-column: full-start / full-end;
-  background-color: #fff;
+  background-color: white;
   display: flex;
   width: 100%;
   align-items: center;
@@ -908,10 +1044,16 @@ html {
     cursor: pointer; }
   .nav__logo {
     width: 17%; }
+    @media only screen and (max-width: 41.56rem) {
+      .nav__logo {
+        width: 20%; } }
   .nav__list {
-    width: 50%;
+    width: 80%;
     display: flex;
     justify-content: center; }
+    @media only screen and (max-width: 41.56rem) {
+      .nav__list {
+        width: 80%; } }
   .nav__item a, .nav__item:link, .nav__item:visited {
     font-family: "Heebo", sans-serif;
     font-size: 1.8rem;
@@ -921,7 +1063,7 @@ html {
     color: black;
     text-decoration: none; }
   .nav__item:not(:last-child) {
-    margin-right: 10rem; }
+    margin-right: 5rem; }
   .nav__item:hover {
     border-bottom: 5px solid #20E3B2;
     transition: all .1s ease; }
@@ -979,6 +1121,9 @@ html {
       -webkit-user-drag: none;
       -moz-user-select: none;
       -ms-user-select: none; }
+      @media only screen and (max-width: 41.56rem) {
+        .glide__slide a {
+          width: 50%; } }
   .glide__arrows {
     -webkit-touch-callout: none;
     user-select: none; }
