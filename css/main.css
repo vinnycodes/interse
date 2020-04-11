@@ -25,6 +25,9 @@ html {
   @media only screen and (max-width: 53rem) {
     .container {
       grid-template-columns: [full-start] 10vw [center-start] 15vw [col-start] 25vw 25vw [col-end] 15vw [center-end] 10vw [full-end]; } }
+  .container--2 {
+    grid-template-rows: 10vh 100% repeat(5, min-content);
+    grid-template-columns: [full-start] 15vw [center-start] 10vw [col-start] 25vw 25vw [col-end] 10vw [center-end] 15vw [full-end]; }
 
 .companyLogo a, .companyLogo:link, .companyLogo:visited {
   display: flex;
@@ -124,6 +127,9 @@ html {
   align-items: center;
   color: white;
   padding: 1.4rem; }
+  @media only screen and (max-width: 500px) {
+    .scrollButton {
+      display: none; } }
   .scrollButton__icon use {
     fill: white; }
 
@@ -137,11 +143,18 @@ html {
     grid-column: center-start / center-end;
     display: grid;
     grid-template-columns: repeat(2, 1fr); }
+    @media only screen and (max-width: 41.56rem) {
+      .aboutheader__container {
+        grid-column: full-start / full-end; } }
   .aboutheader__words {
     grid-column: 1 / span 1;
     display: flex;
     flex-direction: column;
     font-weight: 300; }
+    @media only screen and (max-width: 41.56rem) {
+      .aboutheader__words {
+        padding-top: 5rem;
+        padding-left: 2rem; } }
   .aboutheader__title {
     font-size: 2.7rem;
     padding-top: 5rem;
@@ -390,24 +403,60 @@ html {
     font-size: 2.9rem; }
 
 .contactHeader {
-  grid-column: center-start / center-end;
+  grid-column: full-start / full-end;
   display: grid;
-  grid-template-columns: repeat(2, minmax(min-content, 1fr));
-  grid-column-gap: 4rem; }
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 5rem;
+  padding: 10rem; }
+  @media only screen and (max-width: 1314px) {
+    .contactHeader {
+      padding: 10rem 5rem; } }
+  @media only screen and (max-width: 1180px) {
+    .contactHeader {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 100px 1fr; } }
   .contactHeader__title {
     margin-bottom: 3rem;
     text-decoration: underline; }
+    @media only screen and (max-width: 1180px) {
+      .contactHeader__title {
+        margin-bottom: .5rem; } }
 
 .contactInfo {
   grid-column: 1 / span 1;
   font-size: 2rem; }
+  @media only screen and (max-width: 1180px) {
+    .contactInfo {
+      grid-column: 1 / span 2;
+      display: grid;
+      grid-template-columns: 200px repeat(2, 1fr);
+      margin-bottom: 5rem; } }
+  @media only screen and (max-width: 780px) {
+    .contactInfo {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr); } }
   .contactInfo__title {
-    font-size: 3.2rem;
-    margin-bottom: 10rem; }
+    font-size: 3.2rem; }
+    @media only screen and (max-width: 780px) {
+      .contactInfo__title {
+        margin-bottom: 3rem; } }
   .contactInfo__description {
     font-size: 2rem;
     font-weight: 200;
     margin-bottom: 4rem; }
+    @media only screen and (max-width: 1180px) {
+      .contactInfo__description {
+        grid-column: 2 / span 2; } }
+    @media only screen and (max-width: 780px) {
+      .contactInfo__description {
+        grid-column: 1 / span 1;
+        width: 65%; } }
+    @media only screen and (max-width: 500px) {
+      .contactInfo__description {
+        grid-column: 1 / span 1;
+        width: 55%; } }
   .contactInfo__phone {
     margin-bottom: 4rem; }
     .contactInfo__phone img {
@@ -422,6 +471,12 @@ html {
     font-weight: 200;
     color: #777;
     margin-bottom: 4rem; }
+    @media only screen and (max-width: 1180px) {
+      .contactInfo__schedule {
+        text-align: end; } }
+    @media only screen and (max-width: 779px) {
+      .contactInfo__schedule {
+        text-align: start; } }
   .contactInfo__email {
     display: flex;
     flex-direction: column;
@@ -431,9 +486,19 @@ html {
     .contactInfo__email p {
       display: inline;
       transition: all .3s ease; }
+      @media only screen and (max-width: 1180px) {
+        .contactInfo__email p {
+          margin-right: 10rem; } }
       .contactInfo__email p:hover {
         color: gold;
         text-decoration: underline; }
+    @media only screen and (max-width: 1180px) {
+      .contactInfo__email {
+        flex-direction: row; } }
+
+@media only screen and (max-width: 1180px) {
+  .contactForm {
+    grid-column: 1 / span 2; } }
 
 .form__title {
   margin-bottom: 2rem; }
@@ -454,13 +519,14 @@ html {
   border-radius: 10px;
   height: 5vh;
   text-indent: 1rem;
-  font-size: 2rem; }
+  font-size: 2rem;
+  width: 90%; }
   .form__input--textarea {
     min-height: 15vh;
     height: 20vh;
     max-height: 20vh;
     max-width: 70vh;
-    min-width: 70vh;
+    min-width: 90%;
     resize: none; }
 
 .form__input::placeholder {
@@ -799,8 +865,11 @@ html {
   display: grid;
   grid-template-columns: [full-start] 15vw [center-start] 10vw [col-start] 25vw 25vw [col-end] 10vw [center-end] 15vw [full-end];
   background-color: #1bd9a9;
-  background: black url("../imgs/servicesBackground.jpeg") right no-repeat;
+  background: black url("../imgs/servicesBackground.jpeg") 100%/70% no-repeat;
   color: white; }
+  @media only screen and (max-width: 64rem) {
+    .servicesheader {
+      background: black url("../imgs/servicesBackground.jpeg") 30% 100%/100% no-repeat; } }
   .servicesheader__container {
     grid-column: center-start / center-end;
     display: grid;
@@ -809,7 +878,11 @@ html {
     grid-column: 1 / span 1;
     display: flex;
     flex-direction: column;
-    font-weight: 300; }
+    font-weight: 300;
+    -webkit-text-stroke: .1px black; }
+    @media only screen and (max-width: 53rem) {
+      .servicesheader__words {
+        grid-column: 1 / span 2; } }
   .servicesheader__title {
     font-size: 2.9rem;
     padding-top: 5rem;
@@ -848,13 +921,19 @@ html {
   grid-column: center-start / center-end;
   padding: 15rem 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); }
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center; }
+  @media only screen and (max-width: 1262px) {
+    .services {
+      grid-column: full-start / full-end;
+      padding: 15rem 3rem; } }
   .services__title {
     font-size: 2.5rem;
     font-weight: 500;
     color: #F9C80E;
     grid-column: 1 / span 2;
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    justify-self: start; }
   .services__description {
     font-size: 3.5rem;
     font-weight: 500;
@@ -867,8 +946,11 @@ html {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5rem 3.5rem; }
+    @media only screen and (max-width: 1262px) {
+      .services__container {
+        grid-template-columns: repeat(2, 1fr); } }
   .services__card {
-    padding: 3rem 3rem;
+    padding: 3rem;
     border-radius: 10px;
     border: 1px solid rgba(153, 153, 153, 0.3);
     transition: all .2s ease; }
