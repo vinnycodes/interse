@@ -17,6 +17,9 @@ html {
   @media only screen and (max-width: 41.56rem) {
     html {
       font-size: 43.75%; } }
+  @media only screen and (max-width: 30.63rem) {
+    html {
+      font-size: 37.50%; } }
 
 .container {
   display: grid;
@@ -26,7 +29,7 @@ html {
     .container {
       grid-template-columns: [full-start] 10vw [center-start] 15vw [col-start] 25vw 25vw [col-end] 15vw [center-end] 10vw [full-end]; } }
   .container--2 {
-    grid-template-rows: 10vh 100% repeat(5, min-content);
+    grid-template-rows: 10vh auto;
     grid-template-columns: [full-start] 15vw [center-start] 10vw [col-start] 25vw 25vw [col-end] 10vw [center-end] 15vw [full-end]; }
 
 .companyLogo a, .companyLogo:link, .companyLogo:visited {
@@ -125,13 +128,15 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  padding: 1.4rem; }
+  color: white; }
   @media only screen and (max-width: 500px) {
     .scrollButton {
       display: none; } }
-  .scrollButton__icon use {
-    fill: white; }
+  .scrollButton__icon {
+    height: 3rem;
+    width: 3rem; }
+    .scrollButton__icon use {
+      fill: white; }
 
 .aboutheader {
   grid-column: full-start / full-end;
@@ -406,7 +411,7 @@ html {
   grid-column: full-start / full-end;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
+  grid-template-rows: 100px 1fr;
   grid-column-gap: 5rem;
   padding: 10rem; }
   @media only screen and (max-width: 1314px) {
@@ -419,7 +424,9 @@ html {
       grid-template-rows: 100px 1fr; } }
   .contactHeader__title {
     margin-bottom: 3rem;
-    text-decoration: underline; }
+    text-decoration: underline;
+    height: 100px;
+    grid-column: 1 / span 2; }
     @media only screen and (max-width: 1180px) {
       .contactHeader__title {
         margin-bottom: .5rem; } }
@@ -432,7 +439,8 @@ html {
       grid-column: 1 / span 2;
       display: grid;
       grid-template-columns: 200px repeat(2, 1fr);
-      margin-bottom: 5rem; } }
+      margin-bottom: 5rem;
+      padding-right: 5rem; } }
   @media only screen and (max-width: 780px) {
     .contactInfo {
       display: grid;
@@ -669,6 +677,11 @@ html {
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media only screen and (max-width: 30.63rem) {
+    .clientReview {
+      grid-column: full-start / full-end;
+      padding: 15rem 5rem;
+      text-align: center; } }
   .clientReview__containter {
     height: 55rem;
     border-radius: 10px;
@@ -678,6 +691,10 @@ html {
     @media only screen and (max-width: 41.56rem) {
       .clientReview__containter {
         overflow: hidden; } }
+    @media only screen and (max-width: 30.63rem) {
+      .clientReview__containter {
+        height: 65rem;
+        width: 100%; } }
   .clientReview__img {
     grid-column: 1 / span 1;
     min-width: 275px;
@@ -731,12 +748,24 @@ html {
     @media only screen and (max-width: 600px) {
       .clientReview__testimonial {
         padding-right: 35rem; } }
+    @media only screen and (max-width: 30.63rem) {
+      .clientReview__testimonial {
+        padding-right: 23rem;
+        width: 70%; } }
   .clientReview__name {
     font-size: 1.6rem;
     color: #777; }
+    @media only screen and (max-width: 30.63rem) {
+      .clientReview__name {
+        text-align: center;
+        width: 50%; } }
   .clientReview__company {
     font-size: 1.5rem;
     color: #999; }
+    @media only screen and (max-width: 30.63rem) {
+      .clientReview__company {
+        text-align: center;
+        width: 50%; } }
 
 .getStarted {
   grid-column: col-start / col-end;
@@ -763,16 +792,26 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center; }
+  @media only screen and (max-width: 41.56rem) {
+    .meetUs {
+      grid-column: full-start / full-end; } }
   .meetUs__title {
     text-align: center; }
   .meetUs__container {
     display: flex;
-    justify-content: space-evenly; }
+    justify-content: space-evenly;
+    flex-wrap: wrap; }
+    @media only screen and (max-width: 41.56rem) {
+      .meetUs__container {
+        flex-wrap: wrap; } }
   .meetUs__card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+    @media only screen and (max-width: 41.56rem) {
+      .meetUs__card {
+        margin: 5rem 2rem; } }
   .meetUs__img {
     height: 20rem;
     width: 20rem;
@@ -883,6 +922,10 @@ html {
     @media only screen and (max-width: 53rem) {
       .servicesheader__words {
         grid-column: 1 / span 2; } }
+    @media screen and (orientation: landscape) and (max-width: 1600px) {
+      .servicesheader__words {
+        grid-column: 1 / span 2;
+        padding-right: 10rem; } }
   .servicesheader__title {
     font-size: 2.9rem;
     padding-top: 5rem;
@@ -949,6 +992,9 @@ html {
     @media only screen and (max-width: 1262px) {
       .services__container {
         grid-template-columns: repeat(2, 1fr); } }
+    @media only screen and (max-width: 30.63rem) {
+      .services__container {
+        grid-template-columns: repeat(1, 1fr); } }
   .services__card {
     padding: 3rem;
     border-radius: 10px;
@@ -1070,7 +1116,12 @@ html {
   background-color: #ffff;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
+  overflow-x: hidden;
   background-color: white; }
+  @media only screen and (max-width: 30.63rem) {
+    .header {
+      grid-column: full-start / full-end;
+      padding-left: 3rem; } }
   .header__words {
     grid-column: 1 / span 1;
     display: flex;
@@ -1083,9 +1134,15 @@ html {
     font-family: "Poppins", "Heebo", sans-serif;
     width: 70%;
     font-weight: 300; }
+    @media only screen and (max-width: 30.63rem) {
+      .header__title {
+        width: 100%; } }
   .header__description {
     font-size: 2.3rem;
     width: 90%; }
+    @media only screen and (max-width: 30.63rem) {
+      .header__description {
+        width: 100%; } }
   .header__buttons {
     height: 5vh; }
   .header__button--1 {
@@ -1094,6 +1151,9 @@ html {
     background-color: #3993DD; }
   .header__button:not(:last-child) {
     margin-right: 4rem; }
+    @media only screen and (max-width: 64rem) {
+      .header__button:not(:last-child) {
+        margin-bottom: 3rem; } }
   .header__image {
     align-self: center; }
     .header__image img {
@@ -1119,9 +1179,14 @@ html {
   display: flex;
   width: 100%;
   align-items: center;
+  position: relative;
   position: sticky;
   top: 0;
   z-index: 1; }
+  @media only screen and (max-width: 30.63rem) {
+    .nav {
+      justify-content: center;
+      align-items: center; } }
   .nav__logo, .nav__item {
     cursor: pointer; }
   .nav__logo {
@@ -1132,10 +1197,14 @@ html {
   .nav__list {
     width: 80%;
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    list-style: none; }
     @media only screen and (max-width: 41.56rem) {
       .nav__list {
         width: 80%; } }
+    @media only screen and (max-width: 30.63rem) {
+      .nav__list {
+        display: none; } }
   .nav__item a, .nav__item:link, .nav__item:visited {
     font-family: "Heebo", sans-serif;
     font-size: 1.8rem;
@@ -1166,6 +1235,99 @@ html {
       border-color: #F86624; }
     .nav__current--contact {
       border-color: #F9C80E; }
+  .nav__listMobile {
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    top: 0;
+    left: 0vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    display: none; }
+    @media only screen and (max-width: 30.63rem) {
+      .nav__listMobile {
+        display: flex; } }
+    .nav__listMobile--checkbox {
+      top: .6rem;
+      left: 4.5rem;
+      position: fixed;
+      border: 1px solid red;
+      height: 7rem;
+      width: 7rem;
+      cursor: pointer;
+      z-index: 1;
+      position: fixed;
+      opacity: 0; }
+    .nav__listMobile--mobileMenu {
+      height: 20vh;
+      position: relative;
+      top: 6rem;
+      left: 4rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 12rem; }
+      @media only screen and (max-width: 375px) {
+        .nav__listMobile--mobileMenu {
+          top: 5rem; } }
+      @media only screen and (max-width: 320px) {
+        .nav__listMobile--mobileMenu {
+          top: 4rem; } }
+      .nav__listMobile--mobileMenu, .nav__listMobile--mobileMenu::before, .nav__listMobile--mobileMenu::after {
+        width: 3rem;
+        height: 2px;
+        background-color: #0CEBEB;
+        display: inline-block; }
+      .nav__listMobile--mobileMenu::before, .nav__listMobile--mobileMenu::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all .2s; }
+      .nav__listMobile--mobileMenu::before {
+        top: -.8rem; }
+      .nav__listMobile--mobileMenu::after {
+        top: .8rem; }
+    .nav__listMobile input:checked ~ .listMobileContainer {
+      display: inline-block; }
+    input:checked + .nav__listMobile--mobileMenu {
+      background-color: transparent; }
+    input:checked + .nav__listMobile--mobileMenu::before {
+      top: 0;
+      transform: rotate(135deg);
+      background-color: #0CEBEB; }
+    input:checked + .nav__listMobile--mobileMenu::after {
+      top: 0;
+      transform: rotate(-135deg);
+      background-color: #0CEBEB; }
+    .nav__listMobile .listMobileContainer {
+      height: 100vh;
+      width: 35vw;
+      display: none;
+      transition: all .3s ease;
+      box-shadow: 0 4rem 3rem #999999; }
+    .nav__listMobile__item {
+      border-bottom: 5px solid transparent;
+      margin-left: 4rem;
+      list-style: none;
+      text-align: left;
+      transition: all .2s ease;
+      font-size: 4rem;
+      width: 25%; }
+      .nav__listMobile__item a, .nav__listMobile__item:link, .nav__listMobile__item:visited {
+        font-family: "Heebo", sans-serif;
+        font-size: 2.5rem;
+        font-weight: 300;
+        border-bottom: 5px solid transparent;
+        border-radius: 2px;
+        color: black;
+        text-decoration: none;
+        list-style: none;
+        border-bottom: 5px solid transparent; }
+      .nav__listMobile__item:hover {
+        border-color: #20E3B2;
+        transition: all .1s ease; }
 
 .glide {
   position: relative;
